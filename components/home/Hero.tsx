@@ -8,9 +8,10 @@ import { site } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy-950 text-white">
-      {/* Photography backdrop — kept visible on the right, scrimmed on the
-          left so the copy stays legible */}
+    <section className="relative overflow-hidden bg-white">
+      {/* Photography backdrop at full brightness. A light wash on the left
+          keeps the dark copy readable, a soft dark strip at the top keeps the
+          navbar readable, and the bottom blends into the white section below. */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <Image
           src={images.hero}
@@ -18,34 +19,32 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-[0.9]"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/72 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-transparent to-navy-950/35" />
-        {/* Subtle blue lift, light enough to keep the photo showing */}
-        <div className="absolute -top-28 right-[6%] h-[420px] w-[520px] rounded-full bg-glow/8 blur-[150px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/15 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-navy-950/70 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent" />
       </div>
-      <div className="grid-lines pointer-events-none absolute inset-0" aria-hidden="true" />
 
       <div className="relative mx-auto grid w-full max-w-[1280px] items-center gap-14 px-5 pb-20 pt-32 md:px-8 md:pt-36 lg:min-h-[100dvh] lg:grid-cols-[1.02fr_0.98fr] lg:gap-10 lg:pb-24">
         {/* Copy */}
         <Reveal amount={0.1}>
-          <h1 className="font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-6xl lg:text-[4.4rem]">
+          <h1 className="font-display text-5xl font-semibold leading-[1.02] tracking-tight text-ink md:text-6xl lg:text-[4.4rem]">
             Smart fleets.
             <br />
-            <span className="bg-gradient-to-r from-accent-300 to-glow bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-accent-500 to-accent-700 bg-clip-text text-transparent">
               Safer roads.
             </span>
           </h1>
-          <p className="mt-7 max-w-[46ch] text-base leading-relaxed text-white/70 md:text-lg">
+          <p className="mt-7 max-w-[46ch] text-base font-medium leading-relaxed text-navy-900/80 md:text-lg">
             Speed limiter installation, IVMS and fleet management for Oman's commercial
             fleets. One team, from wiring to certificate.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Button href="/contact" variant="inverse">
+            <Button href="/contact" variant="primary">
               Request a Quote
             </Button>
-            <Button href={site.whatsapp} external variant="ghost-dark" icon={MessageCircle}>
+            <Button href={site.whatsapp} external variant="ghost" icon={MessageCircle}>
               WhatsApp Us
             </Button>
           </div>
@@ -58,7 +57,7 @@ export function Hero() {
           </div>
 
           {/* Floating status chips */}
-          <div className="glass-dark absolute -left-4 -top-5 hidden animate-float items-center gap-2.5 rounded-2xl px-4 py-3 md:flex lg:-left-8">
+          <div className="absolute -left-4 -top-5 hidden animate-float items-center gap-2.5 rounded-2xl bg-navy-950/90 px-4 py-3 text-white shadow-lift ring-1 ring-white/10 backdrop-blur-md md:flex lg:-left-8">
             <span className="flex size-8 items-center justify-center rounded-xl bg-accent-400/15 text-accent-300">
               <BadgeCheck className="size-4" strokeWidth={1.75} />
             </span>
@@ -67,7 +66,7 @@ export function Hero() {
               <span className="text-white/55">GJT-26-04871, same day</span>
             </span>
           </div>
-          <div className="glass-dark absolute -bottom-6 right-2 hidden animate-float-late items-center gap-2.5 rounded-2xl px-4 py-3 md:flex lg:-right-4">
+          <div className="absolute -bottom-6 right-2 hidden animate-float-late items-center gap-2.5 rounded-2xl bg-navy-950/90 px-4 py-3 text-white shadow-lift ring-1 ring-white/10 backdrop-blur-md md:flex lg:-right-4">
             <span className="flex size-8 items-center justify-center rounded-xl bg-accent-400/15 text-accent-300">
               <CircleGauge className="size-4" strokeWidth={1.75} />
             </span>
