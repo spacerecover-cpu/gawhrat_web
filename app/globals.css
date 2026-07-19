@@ -167,6 +167,34 @@ section {
   to { stroke-dashoffset: var(--flow, -170); }
 }
 
+/* ---------- Calibration gauge accents ---------- */
+.gauge-cap {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: gauge-cap 2.6s ease-in-out infinite;
+}
+@keyframes gauge-cap {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.82); }
+}
+/* A bright segment sweeping along the calibrated arc */
+.gauge-scan {
+  animation: gauge-scan 3.6s linear infinite;
+}
+@keyframes gauge-scan {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -239; }
+}
+/* Shimmering road light-trails behind the dial */
+.gauge-trail {
+  opacity: 0.3;
+  animation: gauge-trail 3.6s ease-in-out var(--delay, 0s) infinite;
+}
+@keyframes gauge-trail {
+  0%, 100% { opacity: 0.22; }
+  50% { opacity: 0.55; }
+}
+
 /* Horizontal scroll rows */
 .snap-row {
   scrollbar-width: none;

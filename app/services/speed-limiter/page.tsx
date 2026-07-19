@@ -84,10 +84,14 @@ export default function SpeedLimiterPage() {
               </div>
             </Reveal>
             <Reveal delay={0.12} amount={0.15}>
-              <div className="relative overflow-hidden rounded-[2rem] bg-navy-950 p-10 shadow-lift md:p-14">
+              <div className="relative overflow-hidden rounded-[2rem] bg-navy-950 p-8 shadow-lift md:p-12">
                 <div className="grid-lines pointer-events-none absolute inset-0" aria-hidden="true" />
-                <GaugeVisual className="relative mx-auto max-w-[320px]" />
-                <p className="relative mt-6 text-center text-[12.5px] font-medium uppercase tracking-[0.16em] text-white/40">
+                <div
+                  className="pointer-events-none absolute inset-x-0 top-0 h-2/3 bg-[radial-gradient(ellipse_60%_80%_at_50%_10%,rgba(34,211,238,0.14),transparent_70%)]"
+                  aria-hidden="true"
+                />
+                <GaugeVisual className="relative mx-auto max-w-[420px]" />
+                <p className="relative mt-5 text-center text-[12.5px] font-medium uppercase tracking-[0.16em] text-white/40">
                   Calibrated and road-verified before handover
                 </p>
               </div>
