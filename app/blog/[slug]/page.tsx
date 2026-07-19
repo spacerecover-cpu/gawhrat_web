@@ -52,6 +52,7 @@ export default async function BlogPostPage({
     <>
       <PageHeader
         compact
+        image={post.hero}
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Blog", href: "/blog" },

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
@@ -125,10 +126,9 @@ export default function ServicesPage() {
                   href={c.href}
                   className="group flex h-full flex-col rounded-3xl border border-line bg-white p-7 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1 hover:border-accent-600/25 hover:shadow-soft"
                 >
-                  <c.icon
-                    className="size-6 text-accent-600 transition-transform duration-500 group-hover:scale-110"
-                    strokeWidth={1.5}
-                  />
+                  <div className="relative size-16 overflow-hidden rounded-2xl ring-1 ring-line transition-transform duration-500 group-hover:scale-105">
+                    <Image src={c.image} alt="" fill sizes="64px" className="object-cover" />
+                  </div>
                   <h3 className="mt-4 font-display text-[16px] font-semibold tracking-tight text-ink">
                     {c.title}
                   </h3>

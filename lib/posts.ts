@@ -14,6 +14,7 @@ export type Post = {
   readMins: number;
   category: string;
   cover: string;
+  hero: string;
   sections: PostSection[];
 };
 
@@ -27,6 +28,7 @@ export const posts: Post[] = [
     readMins: 6,
     category: "Compliance",
     cover: images.about,
+    hero: "/heroes/blog-speed-limiter.webp",
     sections: [
       {
         paragraphs: [
@@ -78,6 +80,7 @@ export const posts: Post[] = [
     readMins: 7,
     category: "IVMS",
     cover: images.oilgas,
+    hero: "/heroes/blog-ivms.webp",
     sections: [
       {
         paragraphs: [
@@ -138,6 +141,7 @@ export const posts: Post[] = [
     readMins: 6,
     category: "Fleet Management",
     cover: images.hero,
+    hero: "/heroes/blog-fuel.webp",
     sections: [
       {
         paragraphs: [
@@ -199,6 +203,7 @@ export const posts: Post[] = [
     readMins: 5,
     category: "Buying Guide",
     cover: images.code,
+    hero: "/heroes/blog-gps.webp",
     sections: [
       {
         paragraphs: [
@@ -254,6 +259,7 @@ export const posts: Post[] = [
     readMins: 5,
     category: "Safety",
     cover: images.schools,
+    hero: "/heroes/blog-school-bus.webp",
     sections: [
       {
         paragraphs: [
