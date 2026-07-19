@@ -26,7 +26,7 @@ export function DashboardPreview({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "w-full overflow-hidden rounded-[1.375rem] bg-navy-900/95 text-white ring-1 ring-white/10",
+        "w-full overflow-hidden rounded-[1.375rem] bg-gradient-to-b from-navy-850 to-navy-900 text-white ring-1 ring-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]",
         className
       )}
     >

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { HeroBackdrop } from "@/components/layout/HeroBackdrop";
+import { HeroBackdrop, type HeroTone } from "@/components/layout/HeroBackdrop";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { cn } from "@/lib/utils";
@@ -15,16 +15,24 @@ export function PageHeader({
   crumbs,
   children,
   compact,
+  image,
+  imageAlt,
+  tone,
 }: {
   title: React.ReactNode;
   lede?: string;
   crumbs: Crumb[];
   children?: React.ReactNode;
   compact?: boolean;
+  /** Optional per-page hero photograph. */
+  image?: string;
+  imageAlt?: string;
+  /** Accent hue for the ambient network. */
+  tone?: HeroTone;
 }) {
   return (
     <section className="relative overflow-hidden bg-navy-950 text-white">
-      <HeroBackdrop />
+      <HeroBackdrop image={image} imageAlt={imageAlt} tone={tone} />
       <Container className={cn("relative pt-32 md:pt-40", compact ? "pb-14" : "pb-16 md:pb-24")}>
         <Reveal>
           <nav aria-label="Breadcrumb">

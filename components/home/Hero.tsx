@@ -9,18 +9,21 @@ import { site } from "@/lib/site";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy-950 text-white">
-      {/* Photography backdrop with navy scrim */}
-      <div className="absolute inset-0" aria-hidden="true">
+      {/* Photography backdrop with a lighter navy scrim + blue lift */}
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <Image
           src={images.hero}
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-45"
+          className="object-cover object-center opacity-[0.62]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/88 to-navy-950/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/82 to-navy-950/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/10 to-navy-950/55" />
+        {/* Soft blue glows so the right side reads bright, not murky */}
+        <div className="absolute -top-28 right-[5%] h-[440px] w-[560px] rounded-full bg-glow/16 blur-[130px]" />
+        <div className="absolute bottom-[-12%] right-[22%] h-[380px] w-[480px] rounded-full bg-accent-500/12 blur-[120px]" />
       </div>
       <div className="grid-lines pointer-events-none absolute inset-0" aria-hidden="true" />
 

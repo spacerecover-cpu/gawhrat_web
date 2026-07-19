@@ -6,6 +6,7 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { posts } from "@/lib/posts";
+import { heroImages } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -20,6 +21,8 @@ export default function BlogPage() {
   return (
     <>
       <PageHeader
+        image={heroImages.blog}
+        tone="sky"
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Blog", href: "/blog" },

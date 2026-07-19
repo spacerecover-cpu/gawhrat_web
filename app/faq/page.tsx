@@ -20,6 +20,7 @@ export default function FaqPage() {
   return (
     <>
       <PageHeader
+        tone="teal"
         crumbs={[
           { label: "Home", href: "/" },
           { label: "FAQ", href: "/faq" },

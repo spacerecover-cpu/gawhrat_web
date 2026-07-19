@@ -43,6 +43,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
+        tone="teal"
         crumbs={[
           { label: "Home", href: "/" },
           { label: "About", href: "/about" },

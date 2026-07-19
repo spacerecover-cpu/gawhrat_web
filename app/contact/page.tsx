@@ -15,6 +15,7 @@ export default function ContactPage() {
     <>
       <PageHeader
         compact
+        tone="cyan"
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Contact", href: "/contact" },

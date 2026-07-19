@@ -10,7 +10,7 @@ import { GaugeVisual } from "@/components/mockups/GaugeVisual";
 import { CertificateVisual } from "@/components/mockups/CertificateVisual";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqSchema, serviceSchema } from "@/lib/schema";
-import { faqs } from "@/lib/data";
+import { faqs, heroImages } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Speed Limiter Installation & Certification in Oman",
@@ -49,6 +49,8 @@ export default function SpeedLimiterPage() {
   return (
     <>
       <PageHeader
+        image={heroImages.speedLimiter}
+        tone="teal"
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services" },
