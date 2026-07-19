@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import { Check, FileSpreadsheet, Plug, Send } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
@@ -13,11 +14,12 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { faqSchema, serviceSchema } from "@/lib/schema";
 import { capabilities, faqs, heroImages } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Fleet Management Software & GPS Tracking in Oman",
   description:
     "Cloud fleet management platform for Oman: live GPS tracking, trips, fuel monitoring, maintenance, geofencing, driver management and scheduled reports on desktop and mobile.",
-};
+  path: "/services/fleet-management",
+});
 
 const modules = capabilities.slice(4);
 const platformFaqs = faqs.filter((f) => f.category === "Platform");

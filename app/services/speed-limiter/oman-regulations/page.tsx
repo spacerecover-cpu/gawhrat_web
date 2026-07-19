@@ -19,6 +19,7 @@ import { Accordion } from "@/components/ui/Accordion";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { articlePageSchema, faqSchema, howToSchema } from "@/lib/schema";
+import { pageMeta } from "@/lib/seo";
 import { heroImages } from "@/lib/data";
 import { cn, formatDate } from "@/lib/utils";
 
@@ -39,12 +40,12 @@ import { cn, formatDate } from "@/lib/utils";
 const PATH = "/services/speed-limiter/oman-regulations";
 const LAST_UPDATED = "2026-07-19";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Speed Limiter Regulations in Oman: Rules, Speeds & Certification",
   description:
     "Oman's speed limiter rules explained: which commercial vehicles need a limiter, the 80 km/h limit for heavy vehicles, GSO 1711 / 1625 / 1626 compliance, and the certificate required at ROP inspection and Mulkiya renewal.",
-  alternates: { canonical: PATH },
-};
+  path: PATH,
+});
 
 const gsoStandards = ["GSO 1711", "GSO 1625", "GSO 1626"];
 

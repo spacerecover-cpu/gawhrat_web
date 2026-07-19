@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
@@ -10,11 +11,12 @@ import { CtaBand } from "@/components/ui/CtaBand";
 import { GaugeVisual } from "@/components/mockups/GaugeVisual";
 import { capabilities, heroImages, pillars } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Services",
   description:
     "Speed limiter installation, calibration and certification, IVMS aligned with PDO and OPAL specifications, GPS tracking and cloud fleet management for commercial fleets in Oman.",
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   const [speedLimiter, ivms, fleet] = pillars;

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 import { ArrowUpRight } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
@@ -10,11 +11,12 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { faqSchema } from "@/lib/schema";
 import { faqs, heroImages } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Frequently Asked Questions",
   description:
     "Answers on speed limiter rules and certificates in Oman, PDO and OPAL IVMS requirements, GPS tracking, data ownership and support.",
-};
+  path: "/faq",
+});
 
 const categories = ["General", "Speed Limiters", "IVMS", "Platform"];
 

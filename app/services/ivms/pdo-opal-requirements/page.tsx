@@ -23,6 +23,7 @@ import { Accordion } from "@/components/ui/Accordion";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { articlePageSchema, faqSchema, howToSchema } from "@/lib/schema";
+import { pageMeta } from "@/lib/seo";
 import { heroImages } from "@/lib/data";
 import { cn, formatDate } from "@/lib/utils";
 
@@ -43,12 +44,12 @@ import { cn, formatDate } from "@/lib/utils";
 const PATH = "/services/ivms/pdo-opal-requirements";
 const LAST_UPDATED = "2026-07-19";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "PDO & OPAL IVMS Requirements in Oman: A Contractor's Guide",
   description:
     "What PDO and OPAL actually require from a contractor's In-Vehicle Monitoring System in Oman: the driving events it must record, the management that passes an audit, and how to be audit-ready before mobilisation.",
-  alternates: { canonical: PATH },
-};
+  path: PATH,
+});
 
 const toc = [
   { id: "what", label: "What IVMS is (and isn't)" },

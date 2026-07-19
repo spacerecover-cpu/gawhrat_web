@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -9,11 +10,12 @@ import { posts } from "@/lib/posts";
 import { heroImages } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Blog | Fleet Compliance & Telematics Insights",
   description:
     "Practical guides on speed limiter rules, PDO and OPAL IVMS requirements, fuel savings and fleet technology for operators in Oman.",
-};
+  path: "/blog",
+});
 
 export default function BlogPage() {
   const [featured, ...rest] = posts;

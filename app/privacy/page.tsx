@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { heroImages } from "@/lib/data";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Privacy Policy",
   description: `How ${site.name} collects, uses and protects personal and fleet data.`,
-  robots: { index: true, follow: true },
-};
+  path: "/privacy",
+});
 
 const sections = [
   {

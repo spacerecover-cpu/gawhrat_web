@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 import {
   AlarmClock,
   ArrowUpRight,
@@ -22,11 +23,12 @@ import { faqSchema, serviceSchema } from "@/lib/schema";
 import { faqs, heroImages } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "IVMS Installation in Oman | PDO & OPAL Aligned",
   description:
     "In-Vehicle Monitoring System installation and management aligned with PDO and OPAL specifications. Driver scoring, violation reporting and audit-ready evidence for contractors in Oman.",
-};
+  path: "/services/ivms",
+});
 
 const events = [
   { icon: CircleGauge, title: "Over-speeding", blurb: "Against posted and contractual limits" },

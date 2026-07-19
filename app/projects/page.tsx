@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import { Check } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
@@ -8,11 +9,12 @@ import { Reveal } from "@/components/ui/Reveal";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { heroImages, projects } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Projects & Case Studies",
   description:
     "Representative fleet projects across Oman: speed limiter rollouts, IVMS compliance deployments, school bus tracking and construction fleet control.",
-};
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   const [featured, ...rest] = projects;

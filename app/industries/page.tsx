@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
@@ -7,11 +8,12 @@ import { Reveal } from "@/components/ui/Reveal";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { heroImages, industries } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Industries We Serve",
   description:
     "Fleet compliance and telematics for logistics, oil and gas, construction, schools, government, transport, delivery and rental fleets across Oman.",
-};
+  path: "/industries",
+});
 
 export default function IndustriesPage() {
   return (
