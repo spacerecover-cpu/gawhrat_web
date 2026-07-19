@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { ContactSection } from "@/components/home/ContactSection";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -6,10 +7,11 @@ import { localBusinessSchema } from "@/lib/schema";
 import { heroImages } from "@/lib/data";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Contact Us | Request a Quote",
   description: `Request a quote for speed limiters, IVMS or fleet management in Oman. Call ${site.phone}, WhatsApp us or send the form and we reply within one working day.`,
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

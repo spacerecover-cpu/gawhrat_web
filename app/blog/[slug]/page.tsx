@@ -116,6 +116,28 @@ export default async function BlogPostPage({
             ))}
           </div>
 
+          {post.furtherReading && (
+            <div className="mx-auto mt-12 max-w-2xl">
+              <Link
+                href={post.furtherReading.href}
+                className="group flex items-center justify-between gap-5 rounded-2xl border border-line bg-mist/60 p-6 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-accent-500/40 hover:bg-white hover:shadow-soft"
+              >
+                <span>
+                  <span className="text-[11.5px] font-semibold uppercase tracking-[0.14em] text-accent-700">
+                    Further reading
+                  </span>
+                  <span className="mt-1.5 block font-display text-[16px] font-semibold tracking-tight text-ink">
+                    {post.furtherReading.label}
+                  </span>
+                </span>
+                <ArrowUpRight
+                  className="size-5 shrink-0 text-accent-600 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  strokeWidth={2}
+                />
+              </Link>
+            </div>
+          )}
+
           {/* Related */}
           <div className="mx-auto mt-20 max-w-4xl border-t border-line pt-14">
             <h2 className="font-display text-xl font-semibold tracking-tight text-ink">

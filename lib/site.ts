@@ -53,13 +53,16 @@ export const footerNav = {
   services: [
     { label: "Speed Limiter Installation", href: "/services/speed-limiter" },
     { label: "Speed Limiter Certification", href: "/services/speed-limiter#certification" },
+    { label: "Speed Limiter Regulations", href: "/services/speed-limiter/oman-regulations" },
     { label: "IVMS Installation", href: "/services/ivms" },
+    { label: "PDO & OPAL IVMS Requirements", href: "/services/ivms/pdo-opal-requirements" },
     { label: "Fleet Management Platform", href: "/services/fleet-management" },
     { label: "GPS Vehicle Tracking", href: "/services/fleet-management#modules" },
     { label: "All Services", href: "/services" },
   ],
   company: [
     { label: "About Us", href: "/about" },
+    { label: "Areas We Serve", href: "/areas-we-serve" },
     { label: "Industries", href: "/industries" },
     { label: "Projects", href: "/projects" },
     { label: "Blog", href: "/blog" },

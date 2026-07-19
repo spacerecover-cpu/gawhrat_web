@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import { Award, Eye, HandshakeIcon, ShieldCheck } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
@@ -11,10 +12,11 @@ import { ProcessTimeline } from "@/components/home/ProcessTimeline";
 import { heroImages, images, stats } from "@/lib/data";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "About Us",
   description: `${site.name} is an Oman-based fleet technology company delivering speed limiter installation and certification, IVMS and cloud fleet management for commercial fleets.`,
-};
+  path: "/about",
+});
 
 const values = [
   {
