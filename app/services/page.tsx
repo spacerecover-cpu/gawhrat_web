@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { GaugeVisual } from "@/components/mockups/GaugeVisual";
-import { capabilities, images, pillars } from "@/lib/data";
+import { capabilities, heroImages, pillars } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -21,7 +21,7 @@ export default function ServicesPage() {
   return (
     <>
       <PageHeader
-        image={images.logistics}
+        image={heroImages.services}
         tone="cyan"
         crumbs={[
           { label: "Home", href: "/" },

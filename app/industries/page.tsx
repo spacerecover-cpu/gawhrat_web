@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { CtaBand } from "@/components/ui/CtaBand";
-import { images, industries } from "@/lib/data";
+import { heroImages, industries } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Industries We Serve",
@@ -17,7 +17,7 @@ export default function IndustriesPage() {
   return (
     <>
       <PageHeader
-        image={images.construction}
+        image={heroImages.industries}
         tone="sky"
         crumbs={[
           { label: "Home", href: "/" },

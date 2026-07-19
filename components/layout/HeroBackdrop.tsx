@@ -1,10 +1,13 @@
 /* Ambient backdrop for dark navy hero bands — "Tesla meets Cisco".
-   Layers (optionally) a per-page photo, a fine blueprint grid, soft blue glows,
-   a faint GPS route and a living node network: pulsing dots, radar pings,
-   flowing links and beacons travelling motion paths. Pure CSS/SVG, no client
-   runtime, fully reduced-motion safe. The network is weighted to the right so
-   it never competes with the headline, and its accent hue is tunable per page
-   via `tone` so the site never feels like one repeated template. */
+
+   Two modes:
+   - Photo mode (an `image` is passed): the photograph leads, blending into
+     navy behind the left-aligned copy. These brand photos already carry a
+     glowing GPS/network overlay, so no SVG network is drawn on top.
+   - Generative mode (no image): a fine blueprint grid, soft blue glows and a
+     living node network — pulsing dots, radar pings, flowing links and beacons
+     travelling motion paths. Pure CSS/SVG, reduced-motion safe. `tone` shifts
+     the accent hue so generative pages never feel like one repeated template. */
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -112,13 +115,38 @@ export function HeroBackdrop({
   priority = true,
 }: {
   className?: string;
-  /** Optional per-page background photograph (dimmed behind a navy scrim). */
+  /** Optional per-page background photograph. Enables photo mode. */
   image?: string;
   imageAlt?: string;
-  /** Accent hue for the network; cycle across pages for variety. */
+  /** Accent hue for the generative network. */
   tone?: HeroTone;
   priority?: boolean;
 }) {
+  /* ---- Photo mode: let the brand photograph lead ---- */
+  if (image) {
+    return (
+      <div
+        className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}
+        aria-hidden="true"
+      >
+        <Image
+          src={image}
+          alt={imageAlt}
+          fill
+          priority={priority}
+          sizes="100vw"
+          className="object-cover object-center opacity-90"
+        />
+        {/* Blend the photo into navy behind the left-aligned copy */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/5 to-navy-950/45" />
+        {/* Soft blue glow to tie the image to the brand light */}
+        <div className="absolute -top-40 right-[-6%] h-[480px] w-[620px] rounded-full bg-glow/10 blur-[150px]" />
+      </div>
+    );
+  }
+
+  /* ---- Generative mode: animated network for pages without a photo ---- */
   const c = TONES[tone];
 
   return (
@@ -126,22 +154,6 @@ export function HeroBackdrop({
       className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}
       aria-hidden="true"
     >
-      {/* Per-page photograph with a navy scrim tuned for left-aligned copy */}
-      {image && (
-        <>
-          <Image
-            src={image}
-            alt={imageAlt}
-            fill
-            priority={priority}
-            sizes="100vw"
-            className="object-cover object-center opacity-[0.68]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-navy-950/22" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/15 to-navy-950/60" />
-        </>
-      )}
-
       {/* Blueprint grid */}
       <div className="grid-lines absolute inset-0" />
 
@@ -149,8 +161,8 @@ export function HeroBackdrop({
       <div className="absolute -top-44 right-[-6%] h-[520px] w-[680px] rounded-full bg-glow/12 blur-[140px]" />
       <div className="absolute left-[45%] top-[22%] h-[440px] w-[560px] rounded-full bg-accent-500/10 blur-[130px]" />
 
-      {/* Living network + GPS routes (dimmed a touch when over a photo) */}
-      <div className={cn("hero-net absolute inset-0", image && "opacity-[0.6]")}>
+      {/* Living network + GPS routes */}
+      <div className="hero-net absolute inset-0">
         <svg
           viewBox="0 0 1440 520"
           preserveAspectRatio="xMidYMid slice"

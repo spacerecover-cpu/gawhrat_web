@@ -52,6 +52,18 @@ export const images = {
   code: u("1461749280684-dccba630e2f6", 1200),
 } as const;
 
+/* Brand hero photography (local, in /public/heroes). Dark-navy scenes with a
+   glowing GPS/network overlay, optimised to WebP. Used as page hero backdrops. */
+export const heroImages = {
+  services: "/heroes/services.webp",
+  speedLimiter: "/heroes/speed-limiter.webp",
+  ivms: "/heroes/ivms.webp",
+  fleetManagement: "/heroes/fleet-management.webp",
+  industries: "/heroes/industries.webp",
+  projects: "/heroes/projects.webp",
+  blog: "/heroes/blog.webp",
+} as const;
+
 /* ------------------------------------------------------------------ */
 /* Core service pillars                                                */
 /* ------------------------------------------------------------------ */

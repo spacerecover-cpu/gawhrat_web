@@ -43,7 +43,6 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        image={images.about}
         tone="teal"
         crumbs={[
           { label: "Home", href: "/" },

@@ -17,7 +17,7 @@ import { Accordion } from "@/components/ui/Accordion";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqSchema, serviceSchema } from "@/lib/schema";
-import { faqs, images } from "@/lib/data";
+import { faqs, heroImages } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -50,7 +50,7 @@ export default function IvmsPage() {
   return (
     <>
       <PageHeader
-        image={images.oilgas}
+        image={heroImages.ivms}
         tone="sky"
         crumbs={[
           { label: "Home", href: "/" },
