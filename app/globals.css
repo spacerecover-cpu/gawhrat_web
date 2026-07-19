@@ -131,6 +131,42 @@ section {
   -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 30%, transparent 78%);
 }
 
+/* ---------- Ambient hero network (HeroBackdrop) ---------- */
+
+/* Fade the node/route layer toward the edges so it reads as texture */
+.hero-net {
+  mask-image: radial-gradient(ellipse 118% 96% at 66% 26%, black 34%, transparent 82%);
+  -webkit-mask-image: radial-gradient(ellipse 118% 96% at 66% 26%, black 34%, transparent 82%);
+}
+
+/* Softly breathing node cores */
+.net-node {
+  animation: net-node var(--dur, 4s) ease-in-out var(--delay, 0s) infinite;
+}
+@keyframes net-node {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 0.3; }
+}
+
+/* Expanding radar ping around a node */
+.net-ping {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: net-ping var(--dur, 5.4s) ease-out var(--delay, 0s) infinite;
+}
+@keyframes net-ping {
+  0% { opacity: 0.5; transform: scale(0.35); }
+  70%, 100% { opacity: 0; transform: scale(2.6); }
+}
+
+/* Data pulse travelling a connection line */
+.net-flow {
+  animation: net-flow var(--dur, 3.2s) linear var(--delay, 0s) infinite;
+}
+@keyframes net-flow {
+  to { stroke-dashoffset: var(--flow, -170); }
+}
+
 /* Horizontal scroll rows */
 .snap-row {
   scrollbar-width: none;
@@ -158,6 +194,17 @@ section {
   .drive-path {
     animation: none;
     offset-distance: 35%;
+  }
+  /* Settle the ambient network into a calm static state */
+  .net-ping {
+    display: none;
+  }
+  .net-node {
+    animation: none;
+    opacity: 0.68;
+  }
+  .net-flow {
+    animation: none;
   }
   *,
   *::before,
