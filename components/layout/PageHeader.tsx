@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { HeroBackdrop } from "@/components/layout/HeroBackdrop";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { cn } from "@/lib/utils";
@@ -23,11 +24,7 @@ export function PageHeader({
 }) {
   return (
     <section className="relative overflow-hidden bg-navy-950 text-white">
-      <div className="grid-lines pointer-events-none absolute inset-0" aria-hidden="true" />
-      <div
-        className="pointer-events-none absolute -top-40 right-[-10%] h-[480px] w-[620px] rounded-full bg-glow/10 blur-[130px]"
-        aria-hidden="true"
-      />
+      <HeroBackdrop />
       <Container className={cn("relative pt-32 md:pt-40", compact ? "pb-14" : "pb-16 md:pb-24")}>
         <Reveal>
           <nav aria-label="Breadcrumb">
