@@ -135,7 +135,7 @@ export function HeroBackdrop({
           fill
           priority={priority}
           sizes="100vw"
-          className="object-cover object-center opacity-95"
+          className="object-cover object-center opacity-100"
         />
         {/* Blend the photo into navy behind the left-aligned copy, while
             keeping the imagery clearly visible across the right */}
