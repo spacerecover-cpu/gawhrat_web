@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, BadgeCheck, Satellite } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -163,10 +164,9 @@ export function ServicesBento() {
                 href={c.href}
                 className="group flex items-center gap-3 rounded-2xl border border-line bg-white px-4 py-3.5 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-accent-600/30 hover:bg-mist"
               >
-                <c.icon
-                  className="size-[18px] shrink-0 text-accent-600 transition-transform duration-500 group-hover:scale-110"
-                  strokeWidth={1.5}
-                />
+                <span className="relative size-9 shrink-0 overflow-hidden rounded-lg ring-1 ring-line">
+                  <Image src={c.image} alt="" fill sizes="36px" className="object-cover" />
+                </span>
                 <span className="text-[13.5px] font-medium text-ink">{c.title}</span>
               </Link>
             ))}

@@ -62,6 +62,11 @@ export const heroImages = {
   industries: "/heroes/industries.webp",
   projects: "/heroes/projects.webp",
   blog: "/heroes/blog.webp",
+  about: "/heroes/about.webp",
+  contact: "/heroes/contact.webp",
+  faq: "/heroes/faq.webp",
+  privacy: "/heroes/privacy.webp",
+  terms: "/heroes/terms.webp",
 } as const;
 
 /* ------------------------------------------------------------------ */
@@ -135,6 +140,7 @@ export type Capability = {
   title: string;
   blurb: string;
   href: string;
+  image: string;
 };
 
 export const capabilities: Capability[] = [
@@ -143,72 +149,84 @@ export const capabilities: Capability[] = [
     title: "Speed Limiter Installation",
     blurb: "Supply and fitting for trucks, buses and light vehicles.",
     href: "/services/speed-limiter",
+    image: "/cards/speed-limiter-installation.webp",
   },
   {
     icon: SlidersHorizontal,
     title: "Calibration",
     blurb: "Set and verified to your permitted limit.",
     href: "/services/speed-limiter",
+    image: "/cards/calibration.webp",
   },
   {
     icon: BadgeCheck,
     title: "Certification",
     blurb: "Official certificates for registration and inspection.",
     href: "/services/speed-limiter#certification",
+    image: "/cards/certification.webp",
   },
   {
     icon: Satellite,
     title: "IVMS",
     blurb: "PDO and OPAL-aligned in-vehicle monitoring.",
     href: "/services/ivms",
+    image: "/cards/ivms.webp",
   },
   {
     icon: MapPin,
     title: "GPS Tracking",
     blurb: "Live positions, history and replay for every vehicle.",
     href: "/services/fleet-management#modules",
+    image: "/cards/gps-tracking.webp",
   },
   {
     icon: Users,
     title: "Driver Management",
     blurb: "Profiles, licences, scoring and behaviour coaching.",
     href: "/services/fleet-management#modules",
+    image: "/cards/driver-management.webp",
   },
   {
     icon: Route,
     title: "Trip Management",
     blurb: "Journeys, stops, idling and route history.",
     href: "/services/fleet-management#modules",
+    image: "/cards/trip-management.webp",
   },
   {
     icon: Wrench,
     title: "Maintenance",
     blurb: "Service schedules, reminders and cost records.",
     href: "/services/fleet-management#modules",
+    image: "/cards/maintenance.webp",
   },
   {
     icon: Fuel,
     title: "Fuel Monitoring",
     blurb: "Consumption trends, refills and loss alerts.",
     href: "/services/fleet-management#modules",
+    image: "/cards/fuel-monitoring.webp",
   },
   {
     icon: Radius,
     title: "Geofencing",
     blurb: "Zones with entry, exit and after-hours alerts.",
     href: "/services/fleet-management#modules",
+    image: "/cards/geofencing.webp",
   },
   {
     icon: ChartColumn,
     title: "Reports & Analytics",
     blurb: "Scheduled reports and dashboards that stay readable.",
     href: "/services/fleet-management#modules",
+    image: "/cards/reports-analytics.webp",
   },
   {
     icon: ShieldCheck,
     title: "Compliance",
     blurb: "ROP, PDO and OPAL requirements handled end to end.",
     href: "/services/ivms",
+    image: "/cards/compliance.webp",
   },
 ];
 

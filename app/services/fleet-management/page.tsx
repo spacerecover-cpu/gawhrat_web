@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Check, FileSpreadsheet, Plug, Send } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
@@ -71,9 +72,9 @@ export default function FleetManagementPage() {
             {modules.map((m, i) => (
               <Reveal key={m.title} delay={(i % 4) * 0.05} amount={0.25} className="h-full">
                 <div className="group h-full rounded-3xl bg-mist p-7 ring-1 ring-line transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1 hover:bg-white hover:shadow-soft">
-                  <span className="flex size-11 items-center justify-center rounded-2xl bg-white text-accent-600 ring-1 ring-line transition-colors duration-500 group-hover:bg-navy-950 group-hover:text-accent-300 group-hover:ring-navy-950">
-                    <m.icon className="size-5" strokeWidth={1.5} />
-                  </span>
+                  <div className="relative size-16 overflow-hidden rounded-2xl ring-1 ring-line transition-transform duration-500 group-hover:scale-105">
+                    <Image src={m.image} alt="" fill sizes="64px" className="object-cover" />
+                  </div>
                   <h3 className="mt-5 font-display text-[16px] font-semibold tracking-tight text-ink">
                     {m.title}
                   </h3>

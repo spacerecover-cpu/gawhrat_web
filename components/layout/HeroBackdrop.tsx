@@ -135,13 +135,14 @@ export function HeroBackdrop({
           fill
           priority={priority}
           sizes="100vw"
-          className="object-cover object-center opacity-90"
+          className="object-cover object-center opacity-100"
         />
-        {/* Blend the photo into navy behind the left-aligned copy */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/5 to-navy-950/45" />
+        {/* Blend the photo into navy behind the left-aligned copy, while
+            keeping the imagery clearly visible across the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/68 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/92 via-transparent to-navy-950/40" />
         {/* Soft blue glow to tie the image to the brand light */}
-        <div className="absolute -top-40 right-[-6%] h-[480px] w-[620px] rounded-full bg-glow/10 blur-[150px]" />
+        <div className="absolute -top-40 right-[-6%] h-[480px] w-[620px] rounded-full bg-glow/8 blur-[150px]" />
       </div>
     );
   }

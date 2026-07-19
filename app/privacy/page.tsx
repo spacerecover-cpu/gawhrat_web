@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
+import { heroImages } from "@/lib/data";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -78,6 +79,7 @@ export default function PrivacyPage() {
     <>
       <PageHeader
         compact
+        image={heroImages.privacy}
         tone="cyan"
         crumbs={[
           { label: "Home", href: "/" },

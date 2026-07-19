@@ -8,7 +8,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Counter } from "@/components/ui/Counter";
 import { ProcessTimeline } from "@/components/home/ProcessTimeline";
-import { images, stats } from "@/lib/data";
+import { heroImages, images, stats } from "@/lib/data";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -43,6 +43,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
+        image={heroImages.about}
         tone="teal"
         crumbs={[
           { label: "Home", href: "/" },

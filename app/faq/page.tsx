@@ -6,7 +6,7 @@ import { Accordion } from "@/components/ui/Accordion";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqSchema } from "@/lib/schema";
-import { faqs } from "@/lib/data";
+import { faqs, heroImages } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
@@ -20,6 +20,7 @@ export default function FaqPage() {
   return (
     <>
       <PageHeader
+        image={heroImages.faq}
         tone="teal"
         crumbs={[
           { label: "Home", href: "/" },

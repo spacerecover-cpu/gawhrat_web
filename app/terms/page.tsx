@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
+import { heroImages } from "@/lib/data";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -70,6 +71,7 @@ export default function TermsPage() {
     <>
       <PageHeader
         compact
+        image={heroImages.terms}
         tone="sky"
         crumbs={[
           { label: "Home", href: "/" },
