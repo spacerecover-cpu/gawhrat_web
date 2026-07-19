@@ -1,8 +1,8 @@
-/* Google Analytics 4 helpers. Analytics only loads when NEXT_PUBLIC_GA_ID is
-   set at build time (see .env.example); every helper no-ops otherwise, so the
-   site works with or without measurement configured. */
+/* Google Analytics 4 helpers. The Measurement ID is public (it ships in the
+   client bundle); NEXT_PUBLIC_GA_ID overrides the default below if needed.
+   Analytics stays consent-gated (denied until accepted, see ConsentBanner). */
 
-export const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+export const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-TEYNSQDJTX";
 
 type GaParams = Record<string, unknown>;
 
