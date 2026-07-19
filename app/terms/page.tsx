@@ -70,6 +70,7 @@ export default function TermsPage() {
     <>
       <PageHeader
         compact
+        tone="sky"
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Terms of Service", href: "/terms" },

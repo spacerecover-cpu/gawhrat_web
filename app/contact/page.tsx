@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { ContactSection } from "@/components/home/ContactSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { localBusinessSchema } from "@/lib/schema";
+import { images } from "@/lib/data";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -15,6 +16,8 @@ export default function ContactPage() {
     <>
       <PageHeader
         compact
+        image={images.government}
+        tone="cyan"
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Contact", href: "/contact" },

@@ -10,7 +10,7 @@ import { DashboardPreview } from "@/components/mockups/DashboardPreview";
 import { PhonePreview } from "@/components/mockups/PhonePreview";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqSchema, serviceSchema } from "@/lib/schema";
-import { capabilities, faqs } from "@/lib/data";
+import { capabilities, faqs, images } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Fleet Management Software & GPS Tracking in Oman",
@@ -43,6 +43,8 @@ export default function FleetManagementPage() {
   return (
     <>
       <PageHeader
+        image={images.code}
+        tone="cyan"
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services" },

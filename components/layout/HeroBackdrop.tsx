@@ -1,9 +1,12 @@
 /* Ambient backdrop for dark navy hero bands — "Tesla meets Cisco".
-   Layers a fine blueprint grid, soft blue glows, a faint GPS route and a living
-   node network: pulsing dots, radar pings, flowing links and beacons travelling
-   motion paths. Pure CSS/SVG, no client runtime, and fully reduced-motion safe.
-   The network is weighted to the right so it never competes with the headline. */
+   Layers (optionally) a per-page photo, a fine blueprint grid, soft blue glows,
+   a faint GPS route and a living node network: pulsing dots, radar pings,
+   flowing links and beacons travelling motion paths. Pure CSS/SVG, no client
+   runtime, fully reduced-motion safe. The network is weighted to the right so
+   it never competes with the headline, and its accent hue is tunable per page
+   via `tone` so the site never feels like one repeated template. */
 
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const NODES = {
@@ -54,6 +57,16 @@ const ROUTE_MAIN =
 const ROUTE_LINK =
   "M792 548 C 852 452, 928 410, 1044 388 S 1248 348, 1360 262";
 
+/* Accent hues, kept inside the brand teal→cyan family. Cycling these across
+   pages differentiates the network without leaving the palette. */
+const TONES = {
+  teal: { p: "#67e8dd", s: "#7dd3fc", t: "#2cc9be" },
+  cyan: { p: "#22d3ee", s: "#8be8f5", t: "#38bdf8" },
+  sky: { p: "#7dd3fc", s: "#a7f3ec", t: "#2cc9be" },
+} as const;
+
+export type HeroTone = keyof typeof TONES;
+
 function edgePath([a, b]: [NodeId, NodeId]) {
   const [x1, y1] = NODES[a];
   const [x2, y2] = NODES[b];
@@ -65,7 +78,7 @@ function Beacon({
   path,
   duration,
   delay,
-  color = "#67e8dd",
+  color = "var(--net)",
   r = 3,
 }: {
   path: string;
@@ -91,12 +104,44 @@ function Beacon({
   );
 }
 
-export function HeroBackdrop({ className }: { className?: string }) {
+export function HeroBackdrop({
+  className,
+  image,
+  imageAlt = "",
+  tone = "teal",
+  priority = true,
+}: {
+  className?: string;
+  /** Optional per-page background photograph (dimmed behind a navy scrim). */
+  image?: string;
+  imageAlt?: string;
+  /** Accent hue for the network; cycle across pages for variety. */
+  tone?: HeroTone;
+  priority?: boolean;
+}) {
+  const c = TONES[tone];
+
   return (
     <div
       className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}
       aria-hidden="true"
     >
+      {/* Per-page photograph with a navy scrim tuned for left-aligned copy */}
+      {image && (
+        <>
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            priority={priority}
+            sizes="100vw"
+            className="object-cover object-center opacity-[0.68]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-navy-950/22" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/15 to-navy-950/60" />
+        </>
+      )}
+
       {/* Blueprint grid */}
       <div className="grid-lines absolute inset-0" />
 
@@ -104,12 +149,13 @@ export function HeroBackdrop({ className }: { className?: string }) {
       <div className="absolute -top-44 right-[-6%] h-[520px] w-[680px] rounded-full bg-glow/12 blur-[140px]" />
       <div className="absolute left-[45%] top-[22%] h-[440px] w-[560px] rounded-full bg-accent-500/10 blur-[130px]" />
 
-      {/* Living network + GPS routes */}
-      <div className="hero-net absolute inset-0">
+      {/* Living network + GPS routes (dimmed a touch when over a photo) */}
+      <div className={cn("hero-net absolute inset-0", image && "opacity-[0.6]")}>
         <svg
           viewBox="0 0 1440 520"
           preserveAspectRatio="xMidYMid slice"
           className="absolute inset-0 h-full w-full"
+          style={{ "--net": c.p, "--net2": c.s, "--net3": c.t } as React.CSSProperties}
         >
           {/* Routed roads with dashed centrelines */}
           <g fill="none" strokeLinecap="round">
@@ -117,14 +163,14 @@ export function HeroBackdrop({ className }: { className?: string }) {
             <path d={ROUTE_LINK} stroke="#ffffff" strokeOpacity="0.05" strokeWidth="7" />
             <path
               d={ROUTE_MAIN}
-              stroke="#67e8dd"
+              stroke="var(--net)"
               strokeOpacity="0.22"
               strokeWidth="1.25"
               strokeDasharray="1 11"
             />
             <path
               d={ROUTE_LINK}
-              stroke="#7dd3fc"
+              stroke="var(--net2)"
               strokeOpacity="0.16"
               strokeWidth="1.25"
               strokeDasharray="1 11"
@@ -144,7 +190,7 @@ export function HeroBackdrop({ className }: { className?: string }) {
               <path
                 key={`flow-${i}`}
                 d={edgePath(e)}
-                stroke="#67e8dd"
+                stroke="var(--net)"
                 strokeOpacity="0.42"
                 strokeWidth="1.1"
                 strokeDasharray="2 15"
@@ -161,7 +207,7 @@ export function HeroBackdrop({ className }: { className?: string }) {
           </g>
 
           {/* Node halos */}
-          <g fill="#22d3ee" opacity="0.05">
+          <g fill="var(--net)" opacity="0.05">
             {(Object.keys(NODES) as NodeId[]).map((id) => {
               const [x, y] = NODES[id];
               return <circle key={`halo-${id}`} cx={x} cy={y} r="14" />;
@@ -178,7 +224,7 @@ export function HeroBackdrop({ className }: { className?: string }) {
                 cy={y}
                 r="10"
                 fill="none"
-                stroke="#67e8dd"
+                stroke="var(--net)"
                 strokeWidth="1.2"
                 className="net-ping"
                 style={{ "--dur": "5.4s", "--delay": `${delay}s` } as React.CSSProperties}
@@ -195,7 +241,7 @@ export function HeroBackdrop({ className }: { className?: string }) {
                 cx={x}
                 cy={y}
                 r="2.4"
-                fill="#a7f3ec"
+                fill="var(--net2)"
                 className="net-node"
                 style={
                   {
@@ -208,19 +254,19 @@ export function HeroBackdrop({ className }: { className?: string }) {
           })}
 
           {/* Waypoint markers on the route */}
-          <g fill="#67e8dd" opacity="0.34">
+          <g fill="var(--net)" opacity="0.34">
             <circle cx="636" cy="350" r="2" />
             <circle cx="1300" cy="168" r="2" />
           </g>
 
           {/* Beacons travelling the connections */}
-          <Beacon path={edgePath(["n1", "n2"])} duration={4.5} delay={-1} color="#a7f3ec" r={1.8} />
-          <Beacon path={edgePath(["n3", "n6"])} duration={5} delay={-2.6} color="#7dd3fc" r={1.8} />
+          <Beacon path={edgePath(["n1", "n2"])} duration={4.5} delay={-1} color="var(--net2)" r={1.8} />
+          <Beacon path={edgePath(["n3", "n6"])} duration={5} delay={-2.6} color="var(--net2)" r={1.8} />
 
           {/* Beacons driving the GPS routes */}
-          <Beacon path={ROUTE_MAIN} duration={17} delay={0} r={3} />
-          <Beacon path={ROUTE_MAIN} duration={17} delay={-8.5} color="#7dd3fc" r={2.4} />
-          <Beacon path={ROUTE_LINK} duration={13} delay={-3} color="#2cc9be" r={2.6} />
+          <Beacon path={ROUTE_MAIN} duration={17} delay={0} color="var(--net)" r={3} />
+          <Beacon path={ROUTE_MAIN} duration={17} delay={-8.5} color="var(--net2)" r={2.4} />
+          <Beacon path={ROUTE_LINK} duration={13} delay={-3} color="var(--net3)" r={2.6} />
         </svg>
       </div>
     </div>

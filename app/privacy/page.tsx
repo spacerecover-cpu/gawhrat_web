@@ -78,6 +78,7 @@ export default function PrivacyPage() {
     <>
       <PageHeader
         compact
+        tone="cyan"
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Privacy Policy", href: "/privacy" },

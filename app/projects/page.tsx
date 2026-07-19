@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { CtaBand } from "@/components/ui/CtaBand";
-import { projects } from "@/lib/data";
+import { images, projects } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Projects & Case Studies",
@@ -20,6 +20,8 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHeader
+        image={images.delivery}
+        tone="teal"
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Projects", href: "/projects" },
