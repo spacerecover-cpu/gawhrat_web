@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { BadgeCheck, Bus, CircleGauge, SlidersHorizontal, Truck, Wrench } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
@@ -80,6 +81,17 @@ export default function SpeedLimiterPage() {
                   For fleets, we plan rollouts in batches around your routes and rest days, so
                   compliance never takes vehicles out of service. Renewals are tracked for you
                   and scheduled before certificates lapse.
+                </p>
+                <p>
+                  New to the rules?{" "}
+                  <Link
+                    href="/services/speed-limiter/oman-regulations"
+                    className="font-medium text-accent-700 underline-offset-2 hover:underline"
+                  >
+                    Read our full guide to speed limiter regulations in Oman
+                  </Link>{" "}
+                  — which vehicles are covered, the permitted speeds, the certificate and the
+                  penalties.
                 </p>
               </div>
             </Reveal>

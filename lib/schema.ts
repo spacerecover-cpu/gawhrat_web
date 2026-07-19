@@ -106,3 +106,41 @@ export const articleSchema = (post: Post) => ({
   publisher: { "@id": `${site.url}/#organization` },
   mainEntityOfPage: `${site.url}/blog/${post.slug}`,
 });
+
+/** Generic Article schema for standalone editorial/reference pages (pillars). */
+export const articlePageSchema = (args: {
+  headline: string;
+  description: string;
+  path: string;
+  image?: string;
+  datePublished: string;
+  dateModified: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: args.headline,
+  description: args.description,
+  ...(args.image ? { image: `${site.url}${args.image}` } : {}),
+  datePublished: args.datePublished,
+  dateModified: args.dateModified,
+  author: { "@type": "Organization", name: site.name, url: site.url },
+  publisher: { "@id": `${site.url}/#organization` },
+  mainEntityOfPage: `${site.url}${args.path}`,
+});
+
+export const howToSchema = (args: {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: args.name,
+  description: args.description,
+  step: args.steps.map((s, i) => ({
+    "@type": "HowToStep",
+    position: i + 1,
+    name: s.name,
+    text: s.text,
+  })),
+});
