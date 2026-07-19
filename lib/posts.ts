@@ -16,6 +16,8 @@ export type Post = {
   cover: string;
   hero: string;
   sections: PostSection[];
+  /** Optional pillar/cluster page this post should point readers up to. */
+  furtherReading?: { label: string; href: string };
 };
 
 export const posts: Post[] = [
@@ -29,6 +31,10 @@ export const posts: Post[] = [
     category: "Compliance",
     cover: images.about,
     hero: "/heroes/blog-speed-limiter.webp",
+    furtherReading: {
+      label: "Speed limiter regulations in Oman: the full reference",
+      href: "/services/speed-limiter/oman-regulations",
+    },
     sections: [
       {
         paragraphs: [
