@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   AlarmClock,
+  ArrowUpRight,
   Armchair,
   Check,
   CircleGauge,
@@ -110,6 +112,16 @@ export default function IvmsPage() {
                   </li>
                 ))}
               </ul>
+              <Link
+                href="/services/ivms/pdo-opal-requirements"
+                className="group mt-8 inline-flex items-center gap-1.5 text-[14px] font-semibold text-accent-300 underline-offset-4 hover:underline"
+              >
+                Read the full PDO &amp; OPAL IVMS requirements guide
+                <ArrowUpRight
+                  className="size-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  strokeWidth={2}
+                />
+              </Link>
             </Reveal>
 
             {/* Miniature scoring table from the platform */}

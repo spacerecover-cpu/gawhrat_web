@@ -87,6 +87,10 @@ export const posts: Post[] = [
     category: "IVMS",
     cover: images.oilgas,
     hero: "/heroes/blog-ivms.webp",
+    furtherReading: {
+      label: "PDO & OPAL IVMS requirements in Oman: the full reference",
+      href: "/services/ivms/pdo-opal-requirements",
+    },
     sections: [
       {
         paragraphs: [
