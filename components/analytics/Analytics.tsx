@@ -3,6 +3,7 @@
 import Script from "next/script";
 import { useEffect } from "react";
 import { GA_ID, gaEvent } from "@/lib/analytics";
+import { ConsentBanner } from "./ConsentBanner";
 
 /* Loads GA4 (only when NEXT_PUBLIC_GA_ID is set) and tracks the conversions
    that matter for this business — every call and WhatsApp click, anywhere on
@@ -33,9 +34,12 @@ export function Analytics() {
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
         strategy="afterInteractive"
       />
+      {/* Consent Mode v2: everything denied by default (no cookies) until the
+          visitor accepts via the banner — compliant for PDPL / GDPR. */}
       <Script id="ga4-init" strategy="afterInteractive">
-        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}',{anonymize_ip:true});`}
+        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});gtag('js',new Date());gtag('config','${GA_ID}',{anonymize_ip:true});`}
       </Script>
+      <ConsentBanner />
     </>
   );
 }
