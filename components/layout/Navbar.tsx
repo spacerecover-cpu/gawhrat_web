@@ -87,7 +87,7 @@ export function Navbar() {
                       : "pointer-events-none -translate-y-2 opacity-0"
                   )}
                 >
-                  <div className="glass-dark overflow-hidden rounded-3xl p-2">
+                  <div className="overflow-hidden rounded-3xl border border-white/10 bg-navy-900/95 p-2 shadow-[inset_0_1px_0_rgb(255_255_255/0.1),0_30px_70px_-30px_rgb(3_10_24/0.75)] backdrop-blur-2xl">
                     <div className="grid grid-cols-3 gap-2">
                       {pillars.map((p) => (
                         <Link
