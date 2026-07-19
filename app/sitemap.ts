@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/services/ivms", priority: 0.9, freq: "monthly" as const },
     { path: "/services/ivms/pdo-opal-requirements", priority: 0.8, freq: "monthly" as const },
     { path: "/services/fleet-management", priority: 0.9, freq: "monthly" as const },
+    { path: "/areas-we-serve", priority: 0.7, freq: "monthly" as const },
     { path: "/industries", priority: 0.7, freq: "monthly" as const },
     { path: "/projects", priority: 0.7, freq: "monthly" as const },
     { path: "/blog", priority: 0.7, freq: "weekly" as const },
