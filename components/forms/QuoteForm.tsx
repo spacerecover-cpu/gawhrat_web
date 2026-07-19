@@ -6,12 +6,14 @@ import { site } from "@/lib/site";
 import { gaEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
-/* Leads submit to Web3Forms (set NEXT_PUBLIC_WEB3FORMS_KEY, see .env.example)
-   which emails them to sales@gawhrat.com and records them. If the key is not
-   configured, or the request fails, the form falls back to a pre-filled
-   WhatsApp chat so an enquiry is never lost. */
+/* Leads submit to Web3Forms, which emails them to the address registered with
+   the access key and records them. The access key is public by design (it
+   ships in the client bundle); NEXT_PUBLIC_WEB3FORMS_KEY overrides the default
+   below if you rotate it. If a request fails, the form falls back to a
+   pre-filled WhatsApp chat so an enquiry is never lost. */
 
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+const WEB3FORMS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "3ffb5cab-1349-4dab-a15e-4f8d12d98e76";
 
 const services = [
   "Speed limiter installation",
