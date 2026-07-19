@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -15,6 +17,18 @@ export const metadata: Metadata = {
 };
 
 const categories = ["General", "Speed Limiters", "IVMS", "Platform"];
+
+/* Deeper reference pages, surfaced under the matching FAQ category. */
+const categoryGuides: Record<string, { label: string; href: string }> = {
+  "Speed Limiters": {
+    label: "Full guide: speed limiter regulations in Oman",
+    href: "/services/speed-limiter/oman-regulations",
+  },
+  IVMS: {
+    label: "Full guide: PDO & OPAL IVMS requirements",
+    href: "/services/ivms/pdo-opal-requirements",
+  },
+};
 
 export default function FaqPage() {
   return (
@@ -39,6 +53,18 @@ export default function FaqPage() {
                   {cat}
                 </h2>
                 <Accordion items={faqs.filter((f) => f.category === cat)} />
+                {categoryGuides[cat] && (
+                  <Link
+                    href={categoryGuides[cat].href}
+                    className="group mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-accent-700 underline-offset-4 hover:underline"
+                  >
+                    {categoryGuides[cat].label}
+                    <ArrowUpRight
+                      className="size-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      strokeWidth={2}
+                    />
+                  </Link>
+                )}
               </Reveal>
             ))}
           </div>
