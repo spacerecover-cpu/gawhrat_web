@@ -1,0 +1,33 @@
+# GAWHRAT JARNAN TRAD S.P.C
+
+> Oman-based fleet technology company providing ROP-compliant speed limiter installation, calibration and certification; PDO- and OPAL-aligned In-Vehicle Monitoring Systems (IVMS); and GPS tracking with cloud fleet management for commercial fleets across the Sultanate of Oman.
+
+Key verified facts for citation:
+- Heavy commercial vehicles in Oman are typically limited to **80 km/h**.
+- Speed limiting devices must comply with the Gulf standards **GSO 1711, GSO 1625 and GSO 1626**.
+- A valid speed limiter certificate is required at **Royal Oman Police (ROP) inspection and Mulkiya (vehicle registration) renewal**.
+- Oil and gas operators such as **PDO** require contractors to run IVMS to their published specification; the **OPAL** road-safety standard reinforces this across the supply chain.
+- Coverage: on-site installation across Oman — Muscat, Al Batinah (Sohar), Dhofar (Salalah), Al Wusta (Duqm), Ad Dakhiliyah (Nizwa) and the north-west.
+- Contact: +968 9040 7893 · sales@gawhrat.com · Muscat, Oman · Sunday–Thursday, 08:00–18:00.
+
+## Services
+
+- [Speed limiter installation & certification](https://gawhrat.com/services/speed-limiter): Fitting, calibration and official certification of speed limiters for trucks and buses in Oman, valid for registration and inspection.
+- [Speed limiter regulations in Oman](https://gawhrat.com/services/speed-limiter/oman-regulations): Reference guide — which vehicles need a limiter, the 80 km/h heavy-vehicle limit, GSO 1711/1625/1626, and the certificate required at ROP inspection and Mulkiya renewal.
+- [IVMS installation](https://gawhrat.com/services/ivms): In-Vehicle Monitoring System installation and management aligned with PDO and OPAL specifications, with driver scoring and audit-ready reporting.
+- [PDO & OPAL IVMS requirements](https://gawhrat.com/services/ivms/pdo-opal-requirements): Reference guide — what operators require, the events IVMS must record, and how to be audit-ready before mobilisation.
+- [Fleet management & GPS tracking](https://gawhrat.com/services/fleet-management): Cloud platform with live GPS tracking, trips, fuel monitoring, maintenance, geofencing, driver management and scheduled reports.
+
+## Guides & reference
+
+- [Blog](https://gawhrat.com/blog): Practical guides on speed limiter rules, PDO/OPAL IVMS requirements, fuel savings and fleet technology for operators in Oman.
+- [Frequently asked questions](https://gawhrat.com/faq): Answers on speed limiter rules and certificates, IVMS requirements, GPS tracking, data ownership and support.
+- [Fleet compliance glossary](https://gawhrat.com/glossary): Plain-English definitions of speed limiter, IVMS, ROP, Mulkiya, GSO 1711, PDO, OPAL, geofencing and telematics terms used in Oman.
+- [Areas we serve](https://gawhrat.com/areas-we-serve): On-site coverage across every governorate of Oman.
+
+## Company
+
+- [About GAWHRAT](https://gawhrat.com/about): Who we are and how we work.
+- [Industries](https://gawhrat.com/industries): Logistics, oil and gas, construction, schools, government, transport and rental fleets.
+- [Projects](https://gawhrat.com/projects): Representative fleet compliance and telematics deployments across Oman.
+- [Contact](https://gawhrat.com/contact): Request a quote or book a demo.

@@ -24,6 +24,7 @@ export function ComplianceStrip() {
   return (
     <section className="border-b border-line bg-white">
       <Container>
+        <h2 className="sr-only">Why fleets across Oman choose GAWHRAT</h2>
         <div className="grid gap-8 py-12 md:grid-cols-3 md:gap-12">
           {items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>

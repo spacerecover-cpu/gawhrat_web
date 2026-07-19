@@ -63,7 +63,10 @@ export function PageHeader({
             {title}
           </h1>
           {lede && (
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">
+            <p
+              data-ai-summary
+              className="mt-6 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg"
+            >
               {lede}
             </p>
           )}

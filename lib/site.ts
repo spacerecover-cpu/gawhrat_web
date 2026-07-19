@@ -67,6 +67,7 @@ export const footerNav = {
     { label: "Projects", href: "/projects" },
     { label: "Blog", href: "/blog" },
     { label: "FAQ", href: "/faq" },
+    { label: "Glossary", href: "/glossary" },
     { label: "Contact", href: "/contact" },
   ],
   legal: [
