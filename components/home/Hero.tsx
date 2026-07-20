@@ -36,7 +36,10 @@ export function Hero() {
               Safer roads.
             </span>
           </h1>
-          <p className="mt-7 max-w-[46ch] text-base font-medium leading-relaxed text-navy-900/80 md:text-lg">
+          <p
+            data-ai-summary
+            className="mt-7 max-w-[46ch] text-base font-medium leading-relaxed text-navy-900/80 md:text-lg"
+          >
             Speed limiter installation, IVMS and fleet management for Oman's commercial
             fleets. One team, from wiring to certificate.
           </p>

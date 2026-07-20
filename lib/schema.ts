@@ -25,6 +25,19 @@ export const orgSchema = {
     areaServed: "OM",
     availableLanguage: ["en", "ar"],
   },
+  areaServed: { "@type": "Country", name: "Oman" },
+  knowsAbout: [
+    "Speed limiter installation",
+    "Speed limiter certification",
+    "Royal Oman Police vehicle compliance",
+    "GSO 1711 speed limiter standard",
+    "In-Vehicle Monitoring Systems (IVMS)",
+    "PDO IVMS requirements",
+    "OPAL road safety standard",
+    "Fleet management",
+    "GPS vehicle tracking",
+    "Fleet compliance in Oman",
+  ],
   sameAs: [site.whatsapp],
 };
 
@@ -105,6 +118,10 @@ export const articleSchema = (post: Post) => ({
   author: { "@type": "Organization", name: site.name, url: site.url },
   publisher: { "@id": `${site.url}/#organization` },
   mainEntityOfPage: `${site.url}/blog/${post.slug}`,
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "[data-ai-summary]"],
+  },
 });
 
 /** Generic Article schema for standalone editorial/reference pages (pillars). */
@@ -126,6 +143,10 @@ export const articlePageSchema = (args: {
   author: { "@type": "Organization", name: site.name, url: site.url },
   publisher: { "@id": `${site.url}/#organization` },
   mainEntityOfPage: `${site.url}${args.path}`,
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "[data-ai-summary]"],
+  },
 });
 
 export const howToSchema = (args: {
