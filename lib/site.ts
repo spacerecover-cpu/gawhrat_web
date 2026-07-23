@@ -6,9 +6,9 @@ export const site = {
     "Oman-based fleet technology company: ROP-compliant speed limiter installation, calibration and certification, PDO and OPAL-aligned IVMS, GPS tracking and cloud fleet management for commercial fleets.",
   url: "https://gawhrat.com",
   email: "sales@gawhrat.com",
-  phone: "+968 9040 7893",
-  phoneHref: "+96890407893",
-  whatsapp: "https://wa.me/96890407893",
+  phone: "+968 7521 7675",
+  phoneHref: "+96875217675",
+  whatsapp: "https://wa.me/96875217675",
   address: {
     city: "Muscat",
     country: "Oman",
